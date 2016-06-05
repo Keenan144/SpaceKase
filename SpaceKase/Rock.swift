@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import SpriteKit
+
+class Rock: SKSpriteNode {
+    
+    class func spawn() -> SKSpriteNode {
+        let rockColor = UIColor.blueColor()
+        let rockSize = CGSize(width: 50, height: 20)
+        let rock = SKSpriteNode(color: rockColor, size: rockSize)
+        
+        rock.physicsBody = SKPhysicsBody(rectangleOfSize: rockSize)
+        rock.physicsBody?.dynamic = true
+        rock.physicsBody?.usesPreciseCollisionDetection = true
+    
+        return rock
+    }
+}

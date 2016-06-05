@@ -43,7 +43,7 @@ class MenuScene: SKScene {
     }
     
     private func startGame() {
-        let skView = self.view as! SKView!;
+        let skView = self.view as SKView!;
         let gameScene = GameScene(size: skView.bounds.size)
         let transition = SKTransition.fadeWithDuration(0.15)
         view!.presentScene(gameScene, transition: transition)
