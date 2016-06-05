@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F021CFB4E11006AAB8E /* AppDelegate.swift */; };
+		E8454F051CFB4E11006AAB8E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8454F041CFB4E11006AAB8E /* GameScene.sks */; };
+		E8454F071CFB4E11006AAB8E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F061CFB4E11006AAB8E /* GameScene.swift */; };
+		E8454F091CFB4E11006AAB8E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F081CFB4E11006AAB8E /* GameViewController.swift */; };
+		E8454F0C1CFB4E11006AAB8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8454F0A1CFB4E11006AAB8E /* Main.storyboard */; };
+		E8454F0E1CFB4E11006AAB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8454F0D1CFB4E11006AAB8E /* Assets.xcassets */; };
+		E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */; };
+		E8454F1C1CFB4E11006AAB8E /* SpaceKaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F1B1CFB4E11006AAB8E /* SpaceKaseTests.swift */; };
+		E8454F271CFB4E11006AAB8E /* SpaceKaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */; };
+		E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F341CFB9D3F006AAB8E /* RockController.swift */; };
+		E85690FA1D02962000B1D1EA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85690F91D02962000B1D1EA /* MenuScene.swift */; };
+		E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85690FB1D02978800B1D1EA /* MenuScene.sks */; };
+		E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691001D02A82300B1D1EA /* SpaceShip.swift */; };
+		E85691031D02A82F00B1D1EA /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691021D02A82F00B1D1EA /* Rock.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8454F181CFB4E11006AAB8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8454EF71CFB4E11006AAB8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8454EFE1CFB4E11006AAB8E;
+			remoteInfo = SpaceKase;
+		};
+		E8454F231CFB4E11006AAB8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8454EF71CFB4E11006AAB8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8454EFE1CFB4E11006AAB8E;
+			remoteInfo = SpaceKase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8454EFF1CFB4E11006AAB8E /* SpaceKase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceKase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8454F021CFB4E11006AAB8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8454F041CFB4E11006AAB8E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E8454F061CFB4E11006AAB8E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E8454F081CFB4E11006AAB8E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E8454F0B1CFB4E11006AAB8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8454F0D1CFB4E11006AAB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8454F101CFB4E11006AAB8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8454F121CFB4E11006AAB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8454F171CFB4E11006AAB8E /* SpaceKaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceKaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8454F1B1CFB4E11006AAB8E /* SpaceKaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceKaseTests.swift; sourceTree = "<group>"; };
+		E8454F1D1CFB4E11006AAB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8454F221CFB4E11006AAB8E /* SpaceKaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceKaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceKaseUITests.swift; sourceTree = "<group>"; };
+		E8454F281CFB4E11006AAB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8454F341CFB9D3F006AAB8E /* RockController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockController.swift; sourceTree = "<group>"; };
+		E85690F91D02962000B1D1EA /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		E85690FB1D02978800B1D1EA /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		E85691001D02A82300B1D1EA /* SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
+		E85691021D02A82F00B1D1EA /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8454EFC1CFB4E11006AAB8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F141CFB4E11006AAB8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F1F1CFB4E11006AAB8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8454EF61CFB4E11006AAB8E = {
+			isa = PBXGroup;
+			children = (
+				E8454F011CFB4E11006AAB8E /* SpaceKase */,
+				E8454F1A1CFB4E11006AAB8E /* SpaceKaseTests */,
+				E8454F251CFB4E11006AAB8E /* SpaceKaseUITests */,
+				E8454F001CFB4E11006AAB8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8454F001CFB4E11006AAB8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8454EFF1CFB4E11006AAB8E /* SpaceKase.app */,
+				E8454F171CFB4E11006AAB8E /* SpaceKaseTests.xctest */,
+				E8454F221CFB4E11006AAB8E /* SpaceKaseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8454F011CFB4E11006AAB8E /* SpaceKase */ = {
+			isa = PBXGroup;
+			children = (
+				E85690FF1D02A80100B1D1EA /* Ships */,
+				E85690FE1D02A7DC00B1D1EA /* Rocks */,
+				E8454F021CFB4E11006AAB8E /* AppDelegate.swift */,
+				E8454F041CFB4E11006AAB8E /* GameScene.sks */,
+				E8454F061CFB4E11006AAB8E /* GameScene.swift */,
+				E8454F081CFB4E11006AAB8E /* GameViewController.swift */,
+				E8454F0D1CFB4E11006AAB8E /* Assets.xcassets */,
+				E8454F0A1CFB4E11006AAB8E /* Main.storyboard */,
+				E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */,
+				E8454F121CFB4E11006AAB8E /* Info.plist */,
+				E8454F341CFB9D3F006AAB8E /* RockController.swift */,
+				E85690F91D02962000B1D1EA /* MenuScene.swift */,
+				E85690FB1D02978800B1D1EA /* MenuScene.sks */,
+			);
+			path = SpaceKase;
+			sourceTree = "<group>";
+		};
+		E8454F1A1CFB4E11006AAB8E /* SpaceKaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8454F1B1CFB4E11006AAB8E /* SpaceKaseTests.swift */,
+				E8454F1D1CFB4E11006AAB8E /* Info.plist */,
+			);
+			path = SpaceKaseTests;
+			sourceTree = "<group>";
+		};
+		E8454F251CFB4E11006AAB8E /* SpaceKaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */,
+				E8454F281CFB4E11006AAB8E /* Info.plist */,
+			);
+			path = SpaceKaseUITests;
+			sourceTree = "<group>";
+		};
+		E85690FE1D02A7DC00B1D1EA /* Rocks */ = {
+			isa = PBXGroup;
+			children = (
+				E85691021D02A82F00B1D1EA /* Rock.swift */,
+			);
+			name = Rocks;
+			sourceTree = "<group>";
+		};
+		E85690FF1D02A80100B1D1EA /* Ships */ = {
+			isa = PBXGroup;
+			children = (
+				E85691001D02A82300B1D1EA /* SpaceShip.swift */,
+			);
+			name = Ships;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8454EFE1CFB4E11006AAB8E /* SpaceKase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8454F2B1CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKase" */;
+			buildPhases = (
+				E8454EFB1CFB4E11006AAB8E /* Sources */,
+				E8454EFC1CFB4E11006AAB8E /* Frameworks */,
+				E8454EFD1CFB4E11006AAB8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpaceKase;
+			productName = SpaceKase;
+			productReference = E8454EFF1CFB4E11006AAB8E /* SpaceKase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8454F161CFB4E11006AAB8E /* SpaceKaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8454F2E1CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKaseTests" */;
+			buildPhases = (
+				E8454F131CFB4E11006AAB8E /* Sources */,
+				E8454F141CFB4E11006AAB8E /* Frameworks */,
+				E8454F151CFB4E11006AAB8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8454F191CFB4E11006AAB8E /* PBXTargetDependency */,
+			);
+			name = SpaceKaseTests;
+			productName = SpaceKaseTests;
+			productReference = E8454F171CFB4E11006AAB8E /* SpaceKaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8454F211CFB4E11006AAB8E /* SpaceKaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8454F311CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKaseUITests" */;
+			buildPhases = (
+				E8454F1E1CFB4E11006AAB8E /* Sources */,
+				E8454F1F1CFB4E11006AAB8E /* Frameworks */,
+				E8454F201CFB4E11006AAB8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8454F241CFB4E11006AAB8E /* PBXTargetDependency */,
+			);
+			name = SpaceKaseUITests;
+			productName = SpaceKaseUITests;
+			productReference = E8454F221CFB4E11006AAB8E /* SpaceKaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8454EF71CFB4E11006AAB8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Keenan Sturtevant";
+				TargetAttributes = {
+					E8454EFE1CFB4E11006AAB8E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6WZHU62G8E;
+					};
+					E8454F161CFB4E11006AAB8E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6WZHU62G8E;
+						TestTargetID = E8454EFE1CFB4E11006AAB8E;
+					};
+					E8454F211CFB4E11006AAB8E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6WZHU62G8E;
+						TestTargetID = E8454EFE1CFB4E11006AAB8E;
+					};
+				};
+			};
+			buildConfigurationList = E8454EFA1CFB4E11006AAB8E /* Build configuration list for PBXProject "SpaceKase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8454EF61CFB4E11006AAB8E;
+			productRefGroup = E8454F001CFB4E11006AAB8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8454EFE1CFB4E11006AAB8E /* SpaceKase */,
+				E8454F161CFB4E11006AAB8E /* SpaceKaseTests */,
+				E8454F211CFB4E11006AAB8E /* SpaceKaseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8454EFD1CFB4E11006AAB8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8454F051CFB4E11006AAB8E /* GameScene.sks in Resources */,
+				E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */,
+				E8454F0E1CFB4E11006AAB8E /* Assets.xcassets in Resources */,
+				E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */,
+				E8454F0C1CFB4E11006AAB8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F151CFB4E11006AAB8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F201CFB4E11006AAB8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8454EFB1CFB4E11006AAB8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */,
+				E85691031D02A82F00B1D1EA /* Rock.swift in Sources */,
+				E8454F071CFB4E11006AAB8E /* GameScene.swift in Sources */,
+				E8454F091CFB4E11006AAB8E /* GameViewController.swift in Sources */,
+				E85690FA1D02962000B1D1EA /* MenuScene.swift in Sources */,
+				E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */,
+				E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F131CFB4E11006AAB8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8454F1C1CFB4E11006AAB8E /* SpaceKaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8454F1E1CFB4E11006AAB8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8454F271CFB4E11006AAB8E /* SpaceKaseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8454F191CFB4E11006AAB8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8454EFE1CFB4E11006AAB8E /* SpaceKase */;
+			targetProxy = E8454F181CFB4E11006AAB8E /* PBXContainerItemProxy */;
+		};
+		E8454F241CFB4E11006AAB8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8454EFE1CFB4E11006AAB8E /* SpaceKase */;
+			targetProxy = E8454F231CFB4E11006AAB8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8454F0A1CFB4E11006AAB8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8454F0B1CFB4E11006AAB8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8454F101CFB4E11006AAB8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8454F291CFB4E11006AAB8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8454F2A1CFB4E11006AAB8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8454F2C1CFB4E11006AAB8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpaceKase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E8454F2D1CFB4E11006AAB8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpaceKase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E8454F2F1CFB4E11006AAB8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SpaceKaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceKase.app/SpaceKase";
+			};
+			name = Debug;
+		};
+		E8454F301CFB4E11006AAB8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SpaceKaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceKase.app/SpaceKase";
+			};
+			name = Release;
+		};
+		E8454F321CFB4E11006AAB8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SpaceKaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpaceKase;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E8454F331CFB4E11006AAB8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SpaceKaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpaceKase;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8454EFA1CFB4E11006AAB8E /* Build configuration list for PBXProject "SpaceKase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8454F291CFB4E11006AAB8E /* Debug */,
+				E8454F2A1CFB4E11006AAB8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8454F2B1CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8454F2C1CFB4E11006AAB8E /* Debug */,
+				E8454F2D1CFB4E11006AAB8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8454F2E1CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8454F2F1CFB4E11006AAB8E /* Debug */,
+				E8454F301CFB4E11006AAB8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8454F311CFB4E11006AAB8E /* Build configuration list for PBXNativeTarget "SpaceKaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8454F321CFB4E11006AAB8E /* Debug */,
+				E8454F331CFB4E11006AAB8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8454EF71CFB4E11006AAB8E /* Project object */;
+}
