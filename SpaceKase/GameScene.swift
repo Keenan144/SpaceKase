@@ -51,6 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func spawnShip(){
         ship = SpaceShip.spawn(shipCategory, rockCategory: rockCategory, frame: self.frame)
+        SpaceShip.setShipHealth(100)
         self.addChild(ship!)
     }
     
@@ -71,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func rockTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("spawnRock"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("spawnRock"), userInfo: nil, repeats: true)
     }
     
     func stopRocks() {
@@ -98,9 +99,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contact.bodyB.node?.removeFromParent()
         }
         if (contact.bodyA.categoryBitMask == shipCategory) {
+            contact.bodyB.node?.physicsBody?.collisionBitMask = 0
             print("ROCK CONTACT WITH SHIP")
-            stopRocks()
-            endGame()
+            SpaceShip.deductHealth(20)
+            if SpaceShip.dead() {
+                stopRocks()
+                endGame()
+            }
         }
     }
     

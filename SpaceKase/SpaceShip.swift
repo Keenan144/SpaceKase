@@ -10,6 +10,8 @@ import SpriteKit
 
 class SpaceShip: SKScene {
     
+    static var health = Int()
+    
     class func spawn(shipCategory: UInt32, rockCategory: UInt32, frame: CGRect) -> SKSpriteNode {
         let shipSize = CGSize(width: 60, height: 60)
         let ship = SKSpriteNode(color: UIColor.grayColor(), size: shipSize)
@@ -17,6 +19,7 @@ class SpaceShip: SKScene {
         ship.texture = SKTexture(imageNamed: "Spaceship")
         
         ship.physicsBody = SKPhysicsBody(texture: ship.texture!, alphaThreshold: 0, size: shipSize)
+
         ship.physicsBody?.dynamic = false
         ship.physicsBody?.collisionBitMask = 1;
         ship.physicsBody?.usesPreciseCollisionDetection = true
@@ -27,5 +30,29 @@ class SpaceShip: SKScene {
         ship.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame) - 150)
  
         return ship
+    }
+    
+    class func deductHealth(damage: Int) {
+        health = health - damage
+        print("Ship health --> {\(health)}")
+    }
+    
+    class func shipHealth() -> Int {
+        return health
+    }
+    
+    class func dead() -> Bool {
+        return checkHealth(health)
+    }
+    
+    static func checkHealth(health: Int) -> Bool {
+        if health > 1 {
+            return false
+        }
+        return true
+    }
+    
+    static func setShipHealth(newHealth: Int) {
+        health = newHealth
     }
 }
