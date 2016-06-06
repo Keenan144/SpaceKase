@@ -21,6 +21,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var rock = SKSpriteNode?()
     
+    var label = SKLabelNode(fontNamed: "Arial")
+    
     var boundary = SKSpriteNode?()
     var boundaryColor = UIColor.yellowColor()
     
@@ -52,6 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnShip(){
         ship = SpaceShip.spawn(shipCategory, rockCategory: rockCategory, frame: self.frame)
         SpaceShip.setShipHealth(100)
+        showHealth()
         self.addChild(ship!)
     }
     
@@ -102,6 +105,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contact.bodyB.node?.physicsBody?.collisionBitMask = 0
             print("ROCK CONTACT WITH SHIP")
             SpaceShip.deductHealth(20)
+            refreshHealthView()
             if SpaceShip.dead() {
                 stopRocks()
                 endGame()
@@ -132,6 +136,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(boundary)
         
     }
+    
+    private func showHealth() {
+        label.text = "\(SpaceShip.shipHealth())"
+        label.fontSize = 20
+        label.position = CGPointMake(CGRectGetMinX(self.frame) + 35 , CGRectGetMaxY(self.frame) - 40)
+        
+        self.addChild(label)
+    }
+    
+    private func refreshHealthView() {
+        label.removeFromParent()
+        showHealth()
+    }
+
 
 
 }
