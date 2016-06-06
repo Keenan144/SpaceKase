@@ -17,6 +17,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var timer = NSTimer()
     var run = Bool()
     
+    var defaults = NSUserDefaults()
+    
     var ship = SKSpriteNode?()
     
     var rock = SKSpriteNode?()
@@ -53,7 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func spawnShip(){
         ship = SpaceShip.spawn(shipCategory, rockCategory: rockCategory, frame: self.frame)
-        SpaceShip.setShipHealth(100)
+        SpaceShip.setShipHealth(defaults.objectForKey("Health") as! Int )
         showHealth()
         self.addChild(ship!)
     }
@@ -75,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func rockTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("spawnRock"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval((defaults.objectForKey("SpawnRate") as! NSTimeInterval), target: self, selector: Selector("spawnRock"), userInfo: nil, repeats: true)
     }
     
     func stopRocks() {
@@ -104,7 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (contact.bodyA.categoryBitMask == shipCategory) {
             contact.bodyB.node?.physicsBody?.collisionBitMask = 0
             print("ROCK CONTACT WITH SHIP")
-            SpaceShip.deductHealth(5)
+            SpaceShip.deductHealth(defaults.objectForKey("Damage") as! Int)
             refreshHealthView()
             if SpaceShip.dead() {
                 stopRocks()
@@ -118,6 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let gameScene = MenuScene(size: skView.bounds.size)
         let transition = SKTransition.fadeWithDuration(2.0)
         view!.presentScene(gameScene, transition: transition)
+        
     }
     
     private func setBottomBoundary() {
@@ -138,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func showHealth() {
-        label.text = "\(SpaceShip.shipHealth())"
+        label.text = "Health: \(SpaceShip.shipHealth())"
         switch (SpaceShip.shipHealth()) {
         case _ where (SpaceShip.shipHealth() > 80):
                 label.fontColor = UIColor.greenColor()
@@ -152,7 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             label.fontColor = UIColor.grayColor()
         }
         label.fontSize = 20
-        label.position = CGPointMake(CGRectGetMinX(self.frame) + 35 , CGRectGetMaxY(self.frame) - 40)
+        label.position = CGPointMake(CGRectGetMinX(self.frame) + 55 , CGRectGetMaxY(self.frame) - 40)
         
         self.addChild(label)
     }

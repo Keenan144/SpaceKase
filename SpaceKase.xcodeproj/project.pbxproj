@@ -22,6 +22,8 @@
 		E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691001D02A82300B1D1EA /* SpaceShip.swift */; };
 		E85691031D02A82F00B1D1EA /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691021D02A82F00B1D1EA /* Rock.swift */; };
 		E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F901D04DE2700A22F08 /* boundary.swift */; };
+		E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85D2F921D051AFD00A22F08 /* SettingScene.sks */; };
+		E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F941D051B0F00A22F08 /* SettingScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		E85691001D02A82300B1D1EA /* SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
 		E85691021D02A82F00B1D1EA /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
 		E85D2F901D04DE2700A22F08 /* boundary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = boundary.swift; sourceTree = "<group>"; };
+		E85D2F921D051AFD00A22F08 /* SettingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingScene.sks; sourceTree = "<group>"; };
+		E85D2F941D051B0F00A22F08 /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				E8454F341CFB9D3F006AAB8E /* RockController.swift */,
 				E85690F91D02962000B1D1EA /* MenuScene.swift */,
 				E85690FB1D02978800B1D1EA /* MenuScene.sks */,
+				E85D2F941D051B0F00A22F08 /* SettingScene.swift */,
+				E85D2F921D051AFD00A22F08 /* SettingScene.sks */,
 			);
 			path = SpaceKase;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				E8454F051CFB4E11006AAB8E /* GameScene.sks in Resources */,
 				E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */,
 				E8454F0E1CFB4E11006AAB8E /* Assets.xcassets in Resources */,
+				E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */,
 				E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */,
 				E8454F0C1CFB4E11006AAB8E /* Main.storyboard in Resources */,
 			);
@@ -317,6 +324,7 @@
 				E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */,
 				E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */,
 				E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */,
+				E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

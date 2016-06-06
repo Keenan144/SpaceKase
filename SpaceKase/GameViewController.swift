@@ -11,6 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews();
         let skView = self.view as! SKView;
