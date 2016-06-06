@@ -104,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (contact.bodyA.categoryBitMask == shipCategory) {
             contact.bodyB.node?.physicsBody?.collisionBitMask = 0
             print("ROCK CONTACT WITH SHIP")
-            SpaceShip.deductHealth(20)
+            SpaceShip.deductHealth(5)
             refreshHealthView()
             if SpaceShip.dead() {
                 stopRocks()
@@ -139,6 +139,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func showHealth() {
         label.text = "\(SpaceShip.shipHealth())"
+        switch (SpaceShip.shipHealth()) {
+        case _ where (SpaceShip.shipHealth() > 80):
+                label.fontColor = UIColor.greenColor()
+        case _ where (SpaceShip.shipHealth() > 60):
+            label.fontColor = UIColor.yellowColor()
+        case _ where (SpaceShip.shipHealth() > 40):
+            label.fontColor = UIColor.orangeColor()
+        case _ where (SpaceShip.shipHealth() > 20):
+            label.fontColor = UIColor.redColor()
+        default:
+            label.fontColor = UIColor.grayColor()
+        }
         label.fontSize = 20
         label.position = CGPointMake(CGRectGetMinX(self.frame) + 35 , CGRectGetMaxY(self.frame) - 40)
         
