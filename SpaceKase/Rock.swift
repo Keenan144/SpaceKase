@@ -13,12 +13,17 @@ class Rock: SKSpriteNode {
     
     class func spawn() -> SKSpriteNode {
         let rockColor = UIColor.blueColor()
-        let rockSize = CGSize(width: 50, height: 20)
+        let rockSize = CGSize(width: 20, height: 20)
         let rock = SKSpriteNode(color: rockColor, size: rockSize)
         
         rock.physicsBody = SKPhysicsBody(rectangleOfSize: rockSize)
         rock.physicsBody?.dynamic = true
         rock.physicsBody?.usesPreciseCollisionDetection = true
+        rock.physicsBody?.affectedByGravity = true
+        
+
+        
+        rock.name = "Rock"
     
         return rock
     }

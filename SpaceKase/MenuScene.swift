@@ -16,12 +16,13 @@ class MenuScene: SKScene {
     var defaults = NSUserDefaults.standardUserDefaults()
     
     override func didMoveToView(view: SKView) {
+        setHighScores()
         setDefaults()
         addStartButton()
         addSettingsButton()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent: UIEvent?) {
         for touch in touches{
             touchLocation = touch.locationInNode(self)
             let pos = touch.locationInNode(self)
@@ -38,11 +39,21 @@ class MenuScene: SKScene {
         }
     }
     
+    private func setHighScores() {
+        if (defaults.objectForKey("p1") == nil) {
+            defaults.setObject(0, forKey: "p1")
+            defaults.setObject(0, forKey: "p2")
+            defaults.setObject(0, forKey: "p3")
+            defaults.setObject(0, forKey: "p4")
+            defaults.setObject(0, forKey: "p5")
+        }
+    }
+    
     private func setDefaults() {
         if (defaults.objectForKey("Health") == nil) {
-            defaults.setInteger(100, forKey: "Health")
-            defaults.setInteger(5, forKey: "Damage")
-            defaults.setFloat(1, forKey: "SpawnRate")
+            defaults.setObject(100, forKey: "Health")
+            defaults.setObject(5, forKey: "Damage")
+            defaults.setObject(1, forKey: "SpawnRate")
         }
     }
     
@@ -51,7 +62,7 @@ class MenuScene: SKScene {
         startButton = SKLabelNode(fontNamed: "Arial")
         startButton.text = "Start Game"
         startButton.fontSize = 20
-        startButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        startButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         
         self.addChild(startButton)
     }
@@ -60,21 +71,21 @@ class MenuScene: SKScene {
         settingsButton = SKLabelNode(fontNamed: "Arial")
         settingsButton.text = "Settings"
         settingsButton.fontSize = 20
-        settingsButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 50)
+        settingsButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 50)
         
         self.addChild(settingsButton)
     }
     
     private func startGame() {
         let skView = self.view as SKView!;
-        let gameScene = GameScene(size: skView.bounds.size)
+        let gameScene = GameScene(size: (skView?.bounds.size)!)
         let transition = SKTransition.fadeWithDuration(0.15)
         view!.presentScene(gameScene, transition: transition)
     }
     
     private func startSettings() {
         let skView = self.view as SKView!;
-        let gameScene = SettingScene(size: skView.bounds.size)
+        let gameScene = SettingScene(size: (skView?.bounds.size)!)
         let transition = SKTransition.fadeWithDuration(0.15)
         view!.presentScene(gameScene, transition: transition)
     }

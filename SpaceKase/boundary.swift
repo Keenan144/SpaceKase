@@ -12,25 +12,25 @@ import SpriteKit
 class Boundary: SKScene, SKPhysicsContactDelegate {
     
     class func setBottomBoundary(boundaryCategory: UInt32, rockCategory: UInt32, frame: CGRect) -> SKSpriteNode {
-        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: CGRectGetWidth(frame), height: 1))
-        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: CGRectGetWidth(frame), height: 1))
-        boundary.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMinY(frame))
+        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: frame.width, height: 1))
+        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: frame.width, height: 1))
+        boundary.position = CGPoint(x: frame.midX, y: frame.minY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
         return boundary
     }
     
     class func setRightSideBoundary(boundaryCategory: UInt32, rockCategory: UInt32, frame: CGRect) -> SKSpriteNode {
-        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 1, height: CGRectGetHeight(frame)))
-        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: CGRectGetHeight(frame)))
-        boundary.position = CGPoint(x: CGRectGetMaxX(frame), y: CGRectGetMidY(frame))
+        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 1, height: frame.height))
+        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: frame.height))
+        boundary.position = CGPoint(x: frame.maxX, y: frame.midY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
         return boundary
     }
     
     class func setLeftSideBoundary(boundaryCategory: UInt32, rockCategory: UInt32, frame: CGRect) -> SKSpriteNode {
-        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 1, height: CGRectGetHeight(frame)))
-        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: CGRectGetHeight(frame)))
-        boundary.position = CGPoint(x: CGRectGetMinX(frame), y: CGRectGetMidY(frame))
+        var boundary = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 1, height: frame.height))
+        boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: frame.height))
+        boundary.position = CGPoint(x: frame.minX, y: frame.midY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
         return boundary
     }

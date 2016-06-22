@@ -27,7 +27,9 @@ class SpaceShip: SKScene {
         ship.physicsBody?.categoryBitMask = shipCategory
         ship.physicsBody?.contactTestBitMask = rockCategory
         
-        ship.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame) - 150)
+        ship.position = CGPoint(x: frame.midX, y: frame.midY - 150)
+        
+        ship.name = "Ship"
  
         return ship
     }
