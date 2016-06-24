@@ -17,6 +17,7 @@ class SettingScene: SKScene {
     var normalButton:SKLabelNode!
     var hardButton:SKLabelNode!
     var resetButton:SKLabelNode!
+    var godModeButton:SKLabelNode!
     var touchLocation:CGPoint!
     
     override func didMoveToView(view: SKView) {
@@ -24,6 +25,7 @@ class SettingScene: SKScene {
         addEasyButton()
         addNormalButton()
         addHardButton()
+//        addGodModeButton()
         addResetButton()
     }
     
@@ -61,6 +63,13 @@ class SettingScene: SKScene {
                 defaults.setObject(0, forKey: "p4")
                 defaults.setObject(0, forKey: "p5")
                 startMenu()
+            } else if (node == godModeButton) {
+//                if defaults.objectForKey("GodMode") == nil || defaults.objectForKey("GodMode") as! Bool == false {
+//                    defaults.setObject(false, forKey: "GodMode")
+//                } else {
+//                    defaults.setObject(true, forKey: "GodMode")
+//                }
+//                startMenu()
             } else {
                 print("UNKNOWN ACTION")
                 print("ERROR [\(touchLocation)]")
@@ -110,6 +119,15 @@ class SettingScene: SKScene {
         hardButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 50 )
         
         self.addChild(hardButton)
+    }
+    
+    private func addGodModeButton() {
+        godModeButton = SKLabelNode(fontNamed: "Arial")
+        godModeButton.text = "God Mode: \(defaults.objectForKey("GodMode")!)"
+        godModeButton.fontSize = 20
+        godModeButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 90 )
+        
+        self.addChild(godModeButton)
     }
     
     private func addResetButton() {
