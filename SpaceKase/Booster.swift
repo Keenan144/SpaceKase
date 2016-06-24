@@ -52,16 +52,20 @@ class Boost: SKSpriteNode {
     }
     
     class func spawnerTimer() {
-        print("invincibiliy timer: \(invincibilityTimer)")
-        invincibilityTimer = invincibilityTimer + 1
-        if invincibilityTimer >= 15 {
-            invincibilityTimer = 1
-            timer.invalidate()
-            canSpawn = true
+        if Helper.canRun() {
+            print("invincibiliy timer: \(invincibilityTimer)")
+            invincibilityTimer = invincibilityTimer + 1
+            if invincibilityTimer >= 30 {
+                invincibilityTimer = 1
+                timer.invalidate()
+                canSpawn = true
+            }
         }
     }
     
     class func spawnerTimeout() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("spawnerTimer"), userInfo: nil, repeats: true)
+        if Helper.canRun() {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("spawnerTimer"), userInfo: nil, repeats: true)
+        }
     }
 }

@@ -45,7 +45,7 @@ class EndScene: SKScene {
     }
     
     private func showHighScores() {
-        if let yourScore = defaults.objectForKey("lastScore") as? NSInteger {
+        if let yourScore = defaults.objectForKey("LastScore") as? NSInteger {
             if yourScore > defaults.objectForKey("p5") as! NSInteger && yourScore < defaults.objectForKey("p4") as! NSInteger {
                 defaults.setObject(yourScore, forKey: "p5")
                 return
@@ -83,7 +83,7 @@ class EndScene: SKScene {
     
     private func addLastScore() {
         yourScore = SKLabelNode(fontNamed: "Arial")
-        yourScore.text = "Your Score: \(defaults.objectForKey("lastScore")!)"
+        yourScore.text = "Your Score: \(defaults.objectForKey("LastScore")!)"
         yourScore.fontColor = UIColor.yellowColor()
         yourScore.fontSize = 40
         yourScore.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 220)

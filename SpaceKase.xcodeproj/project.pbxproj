@@ -16,7 +16,6 @@
 		E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */; };
 		E8454F1C1CFB4E11006AAB8E /* SpaceKaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F1B1CFB4E11006AAB8E /* SpaceKaseTests.swift */; };
 		E8454F271CFB4E11006AAB8E /* SpaceKaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */; };
-		E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F341CFB9D3F006AAB8E /* RockController.swift */; };
 		E85690FA1D02962000B1D1EA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85690F91D02962000B1D1EA /* MenuScene.swift */; };
 		E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85690FB1D02978800B1D1EA /* MenuScene.sks */; };
 		E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691001D02A82300B1D1EA /* SpaceShip.swift */; };
@@ -24,6 +23,7 @@
 		E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F901D04DE2700A22F08 /* boundary.swift */; };
 		E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85D2F921D051AFD00A22F08 /* SettingScene.sks */; };
 		E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F941D051B0F00A22F08 /* SettingScene.swift */; };
+		E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FDEA41D1CD42700BB923B /* Helper.swift */; };
 		E89121591D191D54009F4257 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89121581D191D54009F4257 /* File.swift */; };
 		E8C281631D19EDFD007C2A50 /* EndScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C281621D19EDFD007C2A50 /* EndScene.sks */; };
 		E8C281651D19EE0B007C2A50 /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C281641D19EE0B007C2A50 /* EndScene.swift */; };
@@ -64,7 +64,6 @@
 		E8454F221CFB4E11006AAB8E /* SpaceKaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceKaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceKaseUITests.swift; sourceTree = "<group>"; };
 		E8454F281CFB4E11006AAB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8454F341CFB9D3F006AAB8E /* RockController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockController.swift; sourceTree = "<group>"; };
 		E85690F91D02962000B1D1EA /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		E85690FB1D02978800B1D1EA /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		E85691001D02A82300B1D1EA /* SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		E85D2F901D04DE2700A22F08 /* boundary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = boundary.swift; sourceTree = "<group>"; };
 		E85D2F921D051AFD00A22F08 /* SettingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingScene.sks; sourceTree = "<group>"; };
 		E85D2F941D051B0F00A22F08 /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
+		E87FDEA41D1CD42700BB923B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E89121581D191D54009F4257 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E8C281621D19EDFD007C2A50 /* EndScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndScene.sks; sourceTree = "<group>"; };
 		E8C281641D19EE0B007C2A50 /* EndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 		E8454F011CFB4E11006AAB8E /* SpaceKase */ = {
 			isa = PBXGroup;
 			children = (
+				E87FDEA31D1CD41000BB923B /* Helpers */,
 				E8C281661D1AC83C007C2A50 /* PowerUps */,
 				E89121571D191D40009F4257 /* Health */,
 				E85D2F8F1D04DDBE00A22F08 /* boundaries */,
@@ -140,7 +141,6 @@
 				E8454F0A1CFB4E11006AAB8E /* Main.storyboard */,
 				E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */,
 				E8454F121CFB4E11006AAB8E /* Info.plist */,
-				E8454F341CFB9D3F006AAB8E /* RockController.swift */,
 				E85690F91D02962000B1D1EA /* MenuScene.swift */,
 				E85690FB1D02978800B1D1EA /* MenuScene.sks */,
 				E85D2F941D051B0F00A22F08 /* SettingScene.swift */,
@@ -191,6 +191,14 @@
 				E85D2F901D04DE2700A22F08 /* boundary.swift */,
 			);
 			name = boundaries;
+			sourceTree = "<group>";
+		};
+		E87FDEA31D1CD41000BB923B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E87FDEA41D1CD42700BB923B /* Helper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		E89121571D191D40009F4257 /* Health */ = {
@@ -352,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */,
+				E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */,
 				E85691031D02A82F00B1D1EA /* Rock.swift in Sources */,
 				E8454F071CFB4E11006AAB8E /* GameScene.swift in Sources */,
 				E8454F091CFB4E11006AAB8E /* GameViewController.swift in Sources */,
@@ -361,7 +370,6 @@
 				E89121591D191D54009F4257 /* File.swift in Sources */,
 				E8C281651D19EE0B007C2A50 /* EndScene.swift in Sources */,
 				E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */,
-				E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */,
 				E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */,
 				E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */,
 			);

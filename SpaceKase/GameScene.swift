@@ -15,11 +15,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let boundaryCategory: UInt32 = 0x1 << 3
     let healthCategory: UInt32 = 0x2 << 4
     
-    var run = Bool()
-    var invincible = Bool()
-    
-    var defaults = NSUserDefaults()
-    
     var score = NSInteger()
     var label = SKLabelNode(fontNamed: "Arial")
     
@@ -57,8 +52,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func start() {
         score = 0
-        invincible = false
-        run = true
+        Helper.toggleInvincibility(false)
+        Helper.toggleRun(true)
         showExitButton()
         showScore()
         rockTimer()
@@ -68,18 +63,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func spawnShip(){
         ship = SpaceShip.spawn(shipCategory, rockCategory: rockCategory, frame: self.frame)
-        SpaceShip.setShipHealth(defaults.objectForKey("Health") as! Int)
+        SpaceShip.setShipHealth(Helper.setShipHealth())
         showHealth()
         self.addChild(ship)
-    }
-    
-    func showExitButton() {
-        if run == true {
-            exitLabel.text = "exit"
-            exitLabel.fontSize = 20
-            exitLabel.position = CGPoint(x: self.frame.maxX - 55, y: self.frame.maxY - 80)
-            self.addChild(exitLabel)
-        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -106,84 +92,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func increaseHealth() {
-        if run == true {
-            print(SpaceShip.health)
-            SpaceShip.health = SpaceShip.health + 5
-            print("health increased")
-        }
-    }
-    
-    func bumpScore() {
-        if run == true {
-            print(score)
-            score = score + 50
-            print("score increased")
-        }
-    }
-    
-    func increaseScore() {
-        if run == true {
-            print(score)
-            score = score + 5
-            print("score increased")
-        }
-    }
-    
-    func randomSpawn() {
-        if randomInRange(0.0, hi: 5.0) >= 4.5 {
-            if invincible == false {
-                let boost = Boost.spawnInvincibility()
-                boost.position = CGPoint(x: randomInRange(frame.minX, hi: frame.maxX), y: self.frame.maxY + 100)
-                self.addChild(boost)
-            }
-        } else {
-            let boost = Boost.spawnScoreBump()
-            boost.position = CGPoint(x: randomInRange(frame.minX, hi: frame.maxX), y: self.frame.maxY + 100)
-            self.addChild(boost)
-        }
-        
-    }
-    
-    func boosterTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("randomSpawn"), userInfo: nil, repeats: true)
-    }
-    
-    func rockTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval((defaults.objectForKey ("SpawnRate") as! NSTimeInterval), target: self, selector: ("spawnRock"), userInfo: nil, repeats: true)
-    }
-    
-    func healthTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.3, target: self, selector: ("spawnHealth"), userInfo: nil, repeats: true)
-    }
-    
-    func stopRocks() {
-        run = false
-    }
-    
-    func spawnRock() {
-        if run == true {
-            rock = Rock.spawn()
-            rock.position = CGPoint(x: randomInRange(frame.minX, hi: frame.maxX), y: self.frame.maxY + 100)
-            self.addChild(rock)
-        }
-    }
-    
-    func spawnHealth() {
-        if run == true {
-            health = Health.spawn()
-            health.position = CGPoint(x: randomInRange(frame.minX, hi: frame.maxX), y: self.frame.maxY + 100)
-            self.addChild(health)
-        }
-    }
-    
-    func randomInRange(lo: CGFloat, hi : CGFloat) -> CGFloat {
-        
-        return lo + CGFloat(arc4random_uniform(UInt32(hi - lo + 1)))
-    }
-    
     func didBeginContact(contact: SKPhysicsContact) {
-
+        
         if (contact.bodyA.categoryBitMask == boundaryCategory) {
             print("remove rock {}")
             contact.bodyB.node?.removeFromParent()
@@ -208,8 +118,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 showInvincibleLabel()
             } else if (contact.bodyB.node?.name == "Rock") {
                 print("ROCK CONTACT WITH SHIP")
-                if invincible == false {
-                    SpaceShip.deductHealth(defaults.objectForKey("Damage") as! Int)
+                if Helper.isInvincible() == false {
+                    SpaceShip.deductHealth(Helper.deductHealth())
                     if SpaceShip.dead() {
                         stopRocks()
                         endGame()
@@ -220,40 +130,72 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func makeInvincible() {
-        if invincible == false {
-            invincible = true
-            invincibilityTimer = 1
-            startInvincibilityTimer()
+    func increaseHealth() {
+        if Helper.canRun() {
+            SpaceShip.health = SpaceShip.health + 5
         }
     }
     
-    func incrementInvincibilityTimer() {
-        invincibilityTimer = invincibilityTimer + 1
-        showInvincibleLabel()
-        if invincibilityTimer >= 15 {
-            invincibilityNSTimer.invalidate()
-            invincible = false
-            invincibleLabel.removeFromParent()
+    func bumpScore() {
+        if Helper.canRun() {
+            score = score + 50
+        }
+    }
+    
+    func increaseScore() {
+        if Helper.canRun() {
+            score = score + 5
+        }
+    }
+    
+    func spawnRock() {
+        if Helper.canRun() {
+            rock = Rock.spawn()
+            rock.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: frame.maxY)
+            self.addChild(rock)
+        }
+    }
+    
+    func spawnHealth() {
+        if Helper.canRun() {
+            health = Health.spawn()
+            health.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: frame.maxY)
+            self.addChild(health)
+        }
+    }
+    
+    func randomSpawn() {
+        if Helper.randomSpawn() == 1 {
+                let boost = Boost.spawnInvincibility()
+                boost.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: self.frame.maxY)
+                self.addChild(boost)
+        } else {
+            let boost = Boost.spawnScoreBump()
+            boost.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: self.frame.maxY)
+            self.addChild(boost)
         }
         
     }
     
-    private func startInvincibilityTimer() {
-         invincibilityNSTimer  = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("incrementInvincibilityTimer"), userInfo: nil, repeats: true)
+    func boosterTimer() {
+        _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("randomSpawn"), userInfo: nil, repeats: true)
     }
+    
+    func rockTimer() {
+        _ = NSTimer.scheduledTimerWithTimeInterval(Helper.rockSpawnRate(), target: self, selector: ("spawnRock"), userInfo: nil, repeats: true)
+    }
+    
+    func healthTimer() {
+        _ = NSTimer.scheduledTimerWithTimeInterval(5.3, target: self, selector: ("spawnHealth"), userInfo: nil, repeats: true)
+    }
+    
+    func stopRocks() {
+        Helper.toggleRun(false)
+    }
+    
     
     private func showHighScores() {
-        defaults.setObject(score, forKey: "lastScore")
-    }
-    
-    private func endGame() {
-        showHighScores()
-        let skView = self.view as SKView!;
-        let gameScene = EndScene(size: (skView?.bounds.size)!)
-        let transition = SKTransition.fadeWithDuration (2.0)
-        view!.presentScene(gameScene, transition: transition)
-        
+        Helper.setLastScore(score)
     }
     
     private func setBottomBoundary() {
@@ -282,14 +224,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func showInvincibleLabel() {
-        invincibleLabel.removeFromParent()
-        let invLabel = invincibleLabel
-        invLabel.text = "Invincible: \(15 - invincibilityTimer)"
-        invLabel.fontColor = UIColor.yellowColor()
-        invLabel.fontSize = 20
-        invLabel.position = CGPoint(x: self.frame.minX + 55 , y: self.frame.maxY - 65)
-        
-        self.addChild(invLabel)
+        if 15 - invincibilityTimer > 0 {
+            invincibleLabel.removeFromParent()
+            let invLabel = invincibleLabel
+            invLabel.text = "Invincible: \(15 - invincibilityTimer)"
+            invLabel.fontColor = UIColor.yellowColor()
+            invLabel.fontSize = 20
+            invLabel.position = CGPoint(x: self.frame.minX + 55 , y: self.frame.maxY - 65)
+            
+            self.addChild(invLabel)
+        } else {
+            invincibleLabel.removeFromParent()
+        }
     }
     
     private func showScore() {
@@ -300,6 +246,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
     }
     
+    func showExitButton() {
+        if Helper.canRun() {
+            exitLabel.text = "exit"
+            exitLabel.fontSize = 20
+            exitLabel.position = CGPoint(x: self.frame.maxX - 55, y: self.frame.maxY - 80)
+            self.addChild(exitLabel)
+        }
+    }
+    
     private func refreshHealthView() {
         label.removeFromParent()
         showHealth()
@@ -308,6 +263,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func refreshScoreView() {
         scoreLabel.removeFromParent()
         showScore()
+    }
+    
+    private func endGame() {
+        showHighScores()
+        ship.removeAllActions()
+        rock.removeAllActions()
+        invincibleLabel.removeAllActions()
+        let skView = self.view as SKView!;
+        let gameScene = EndScene(size: (skView?.bounds.size)!)
+        let transition = SKTransition.fadeWithDuration (2.0)
+        view!.presentScene(gameScene, transition: transition)
+    }
+    
+    private func makeInvincible() {
+        if Helper.invincible == false {
+            Helper.toggleInvincibility(true)
+            invincibilityTimer = 1
+            startInvincibilityTimer()
+        }
+    }
+    
+    @objc private func incrementInvincibilityTimer() {
+        invincibilityTimer = invincibilityTimer + 1
+        showInvincibleLabel()
+        if invincibilityTimer >= 15 {
+            invincibilityNSTimer.invalidate()
+            Helper.toggleInvincibility(false)
+        }
+    }
+    
+    private func returnInvincibilityTime() -> Int32 {
+        return invincibilityTimer
+    }
+    
+    private func startInvincibilityTimer() {
+        invincibilityNSTimer  = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: (#selector(GameScene.incrementInvincibilityTimer)), userInfo: nil, repeats: true)
     }
 
 }
