@@ -63,7 +63,7 @@ class SettingScene: SKScene {
                 defaults.setObject(0, forKey: "p4")
                 defaults.setObject(0, forKey: "p5")
                 startMenu()
-            } else if (node == godModeButton) {
+//            } else if (node == godModeButton) {
 //                if defaults.objectForKey("GodMode") == nil || defaults.objectForKey("GodMode") as! Bool == false {
 //                    defaults.setObject(false, forKey: "GodMode")
 //                } else {
