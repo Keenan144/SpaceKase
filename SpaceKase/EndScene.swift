@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import SystemConfiguration
 
 class EndScene: SKScene {
     
@@ -60,6 +61,9 @@ class EndScene: SKScene {
                 return
             } else if yourScore > defaults.objectForKey("p1") as! NSInteger {
                 defaults.setObject(yourScore, forKey: "p1")
+                if Reachability.isConnectedToNetwork() {
+//                    UploadController.post(["uuid": "12345"], url: "http://boiling-ridge-62596.herokuapp.com/scan_code")
+                }
                 return
             } else {
                 return
@@ -166,5 +170,23 @@ class EndScene: SKScene {
         let gameScene = SettingScene(size: (skView?.bounds.size)!)
         let transition = SKTransition.fadeWithDuration(0.15)
         view!.presentScene(gameScene, transition: transition)
+    }
+    
+    internal class Reachability {
+        class func isConnectedToNetwork() -> Bool {
+            var zeroAddress = sockaddr_in()
+            zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+            zeroAddress.sin_family = sa_family_t(AF_INET)
+            let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
+                SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
+            }
+            var flags = SCNetworkReachabilityFlags()
+            if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+                return false
+            }
+            let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+            let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+            return (isReachable && !needsConnection)
+        }
     }
 }

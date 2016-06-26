@@ -22,10 +22,8 @@ class SettingScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         addBackButton()
-        addEasyButton()
-        addNormalButton()
-        addHardButton()
-//        addGodModeButton()
+        addLevelButtons()
+        addGodModeButton()
         addResetButton()
     }
     
@@ -35,25 +33,28 @@ class SettingScene: SKScene {
             let pos = touch.locationInNode(self)
             let node = nodeAtPoint(pos)
             
-            print(backButton)
             if (node == backButton) {
                 startMenu()
             } else if (node == easyButton) {
+                defaults.setObject("Easy", forKey: "Difficulity")
                 defaults.setObject(200, forKey: "Health")
                 defaults.setObject(5, forKey: "Damage")
                 defaults.setObject(1, forKey: "SpawnRate")
-                startMenu()
+                addLevelButtons()
             } else if  (node == normalButton) {
+                defaults.setObject("Normal", forKey: "Difficulity")
                 defaults.setObject(150, forKey: "Health")
                 defaults.setObject(10, forKey: "Damage")
                 defaults.setObject(0.5, forKey: "SpawnRate")
-                startMenu()
+                addLevelButtons()
             } else if (node == hardButton) {
+                defaults.setObject("Hard", forKey: "Difficulity")
                 defaults.setObject(100, forKey: "Health")
                 defaults.setObject(20, forKey: "Damage")
                 defaults.setObject(0.2, forKey: "SpawnRate")
-                startMenu()
+                addLevelButtons()
             } else if (node == resetButton) {
+                defaults.setObject("Normal", forKey: "Difficulity")
                 defaults.setObject(150, forKey: "Health")
                 defaults.setObject(10, forKey: "Damage")
                 defaults.setObject(0.5, forKey: "SpawnRate")
@@ -62,14 +63,18 @@ class SettingScene: SKScene {
                 defaults.setObject(0, forKey: "p3")
                 defaults.setObject(0, forKey: "p4")
                 defaults.setObject(0, forKey: "p5")
+                Helper.toggleInvincibility(false)
                 startMenu()
-//            } else if (node == godModeButton) {
-//                if defaults.objectForKey("GodMode") == nil || defaults.objectForKey("GodMode") as! Bool == false {
-//                    defaults.setObject(false, forKey: "GodMode")
-//                } else {
-//                    defaults.setObject(true, forKey: "GodMode")
-//                }
-//                startMenu()
+            } else if (node == godModeButton) {
+                if Helper.isInvincible() == false {
+                    Helper.toggleInvincibility(true)
+                    self.godModeButton.removeFromParent()
+                    addGodModeButton()
+                } else {
+                    Helper.toggleInvincibility(false)
+                    self.godModeButton.removeFromParent()
+                    addGodModeButton()
+                }
             } else {
                 print("UNKNOWN ACTION")
                 print("ERROR [\(touchLocation)]")
@@ -96,7 +101,12 @@ class SettingScene: SKScene {
     
     private func addEasyButton() {
         easyButton = SKLabelNode(fontNamed: "Arial")
-        easyButton.text = "Easy"
+        if ((defaults.objectForKey("Difficulity") != nil && defaults.objectForKey("Difficulity") as! String == "Easy")) {
+            easyButton.text = "-> Easy <-"
+            easyButton.fontColor = UIColor.yellowColor()
+        } else {
+            easyButton.text = "Easy"
+        }
         easyButton.fontSize = 20
         easyButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 50)
         
@@ -105,7 +115,12 @@ class SettingScene: SKScene {
     
     private func addNormalButton() {
         normalButton = SKLabelNode(fontNamed: "Arial")
-        normalButton.text = "Normal"
+        if ((defaults.objectForKey("Difficulity") != nil && defaults.objectForKey("Difficulity") as! String == "Normal")) {
+            normalButton.text = "-> Normal <-"
+            normalButton.fontColor = UIColor.yellowColor()
+        } else {
+            normalButton.text = "Normal"
+        }
         normalButton.fontSize = 20
         normalButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         
@@ -114,7 +129,12 @@ class SettingScene: SKScene {
     
     private func addHardButton() {
         hardButton = SKLabelNode(fontNamed: "Arial")
-        hardButton.text = "Hard"
+        if ((defaults.objectForKey("Difficulity") != nil && defaults.objectForKey("Difficulity") as! String == "Hard")) {
+            hardButton.text = "-> Hard <-"
+            hardButton.fontColor = UIColor.yellowColor()
+        } else {
+           hardButton.text = "Hard"
+        }
         hardButton.fontSize = 20
         hardButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 50 )
         
@@ -123,7 +143,7 @@ class SettingScene: SKScene {
     
     private func addGodModeButton() {
         godModeButton = SKLabelNode(fontNamed: "Arial")
-        godModeButton.text = "God Mode: \(defaults.objectForKey("GodMode")!)"
+        godModeButton.text = "God Mode: \(Helper.isInvincible())"
         godModeButton.fontSize = 20
         godModeButton.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 90 )
         
@@ -151,5 +171,20 @@ class SettingScene: SKScene {
         let gameScene = SettingScene(size: (skView?.bounds.size)!)
         let transition = SKTransition.fadeWithDuration(0.15)
         view!.presentScene(gameScene, transition: transition)
+    }
+    
+    private func addLevelButtons() {
+        if easyButton != nil{
+          easyButton.removeFromParent()
+        }
+        addEasyButton()
+        if normalButton != nil {
+            normalButton.removeFromParent()
+        }
+        addNormalButton()
+        if hardButton != nil {
+            hardButton.removeFromParent()
+        }
+        addHardButton()
     }
 }

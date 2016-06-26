@@ -16,6 +16,7 @@ class Boundary: SKScene, SKPhysicsContactDelegate {
         boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: frame.width, height: 1))
         boundary.position = CGPoint(x: frame.midX, y: frame.minY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
+        print("Boundary.setBottom")
         return boundary
     }
     
@@ -24,6 +25,7 @@ class Boundary: SKScene, SKPhysicsContactDelegate {
         boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: frame.height))
         boundary.position = CGPoint(x: frame.maxX, y: frame.midY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
+        print("Boundary.setRightSide")
         return boundary
     }
     
@@ -32,6 +34,7 @@ class Boundary: SKScene, SKPhysicsContactDelegate {
         boundary.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 1, height: frame.height))
         boundary.position = CGPoint(x: frame.minX, y: frame.midY)
         boundary = setBoundary(boundary, boundaryCategory: boundaryCategory, rockCategory: rockCategory)
+        print("Boundary.setLeftSide")
         return boundary
     }
     
@@ -41,6 +44,7 @@ class Boundary: SKScene, SKPhysicsContactDelegate {
         boundary.physicsBody?.contactTestBitMask = rockCategory
         boundary.physicsBody?.collisionBitMask = 0;
         boundary.physicsBody?.usesPreciseCollisionDetection = true
+        print("Boundary.set")
         return boundary
     }
 }

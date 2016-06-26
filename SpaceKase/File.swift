@@ -15,6 +15,8 @@ class Health: SKSpriteNode {
         let healthSize = CGSize(width: 20, height: 20)
         let health = SKSpriteNode(color: healthColor, size: healthSize)
         
+        health.texture = SKTexture(imageNamed: "Health")
+        
         health.physicsBody = SKPhysicsBody(rectangleOfSize: healthSize)
         health.physicsBody?.dynamic = true
         health.physicsBody?.usesPreciseCollisionDetection = true
@@ -23,6 +25,7 @@ class Health: SKSpriteNode {
         
         health.name = "Health"
         
+        print("HEALTH: spawn")
         return health
     }
     
@@ -42,6 +45,7 @@ class Health: SKSpriteNode {
             label.fontColor = UIColor.grayColor()
         }
         
+        print("HEALTH: showHealth")
         return label
     }
 }

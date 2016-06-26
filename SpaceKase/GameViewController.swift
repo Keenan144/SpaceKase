@@ -11,15 +11,27 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet var GameTitle: UILabel!
+    @IBOutlet var StartGame: UIButton!
+    @IBOutlet var Settings: UIButton!
+    
+    
+    func renderButtons() {
+//        GameTitle.text = "SpaceKase"
+//        StartGame.setTitle("Start Game", forState: UIControlState.Normal)
+//        StartGame.addTarget(self, action: (#selector(GameViewController.LaunchGame)), forControlEvents: .TouchUpInside)
+//        Settings.setTitle("Settings", forState: UIControlState.Normal)
+//        Settings.addTarget(self, action: (#selector(GameViewController.LaunchSettings)), forControlEvents: .TouchUpInside)
+    }
     
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews();
         let skView = self.view as! SKView;
         if skView.scene != nil {
-            skView.showsFPS = true;
-            skView.showsNodeCount = true;
-            skView.showsPhysics = true;
+            skView.showsFPS = false;
+            skView.showsNodeCount = false;
+            skView.showsPhysics = false;
             // Create and configure the scene
             
             let scene:SKScene = MenuScene(size: skView.bounds.size);
@@ -34,12 +46,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        renderButtons()
 
         if let scene = MenuScene(fileNamed: "MenuScene") {
             // Configure the view.
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+            skView.showsFPS = false
+            skView.showsNodeCount = false
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
@@ -56,7 +70,7 @@ class GameViewController: UIViewController {
     }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.All
+        return UIInterfaceOrientationMask.Portrait
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,5 +80,37 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func LaunchGame() {
+        let skView = self.view as! SKView;
+        let scene:SKScene = GameScene(size: skView.bounds.size);
+        //    Objective-C code in next 2 lines
+//            SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
+            scene.scaleMode = SKSceneScaleMode.AspectFill;
+        
+        // Present Scene
+        let transition = SKTransition.fadeWithDuration (2.0)
+        removeButtons()
+        skView.presentScene(scene, transition: transition)
+    }
+    
+    func LaunchSettings() {
+        let skView = self.view as! SKView;
+        let scene:SKScene = SettingScene(size: skView.bounds.size);
+        //    Objective-C code in next 2 lines
+        //            SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleMode.AspectFill;
+        
+        // Present Scene
+        let transition = SKTransition.fadeWithDuration (2.0)
+        removeButtons()
+        skView.presentScene(scene, transition: transition)
+    }
+    
+    func removeButtons() {
+        GameTitle.hidden = true
+        StartGame.hidden = true
+        Settings.hidden = true
     }
 }

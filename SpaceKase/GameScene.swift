@@ -22,6 +22,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var rock = SKSpriteNode()
     var health = SKSpriteNode()
     
+    var boosterRateTimer = NSTimer()
+    var rockRateTimer = NSTimer()
+    var healthRateTimer = NSTimer()
+    
     var scoreLabel = SKLabelNode(fontNamed: "Arial")
     var exitLabel = SKLabelNode(fontNamed: "Arial")
     var invincibleLabel = SKLabelNode()
@@ -35,7 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var touchLocation = CGPoint()
 
     override func didMoveToView(view: SKView) {
-        view.showsPhysics = true
+        view.showsPhysics = false
         physicsWorld.contactDelegate = self
         self.backgroundColor = backgroundColorCustom
         
@@ -52,7 +56,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func start() {
         score = 0
-        Helper.toggleInvincibility(false)
         Helper.toggleRun(true)
         showExitButton()
         showScore()
@@ -95,9 +98,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact: SKPhysicsContact) {
         
         if (contact.bodyA.categoryBitMask == boundaryCategory) {
-            print("remove rock {}")
             contact.bodyB.node?.removeFromParent()
-            print("increase score {}")
+            print("GAMESCENE: scoreIncresed")
             increaseScore()
             refreshScoreView()
         }
@@ -105,19 +107,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contact.bodyB.node?.physicsBody?.collisionBitMask = 0
             if (contact.bodyB.node?.name == "Health") {
                 contact.bodyB.node?.removeFromParent()
-                print("increase Health")
                 increaseHealth()
             } else if (contact.bodyB.node?.name == "ScoreBump") {
                 contact.bodyB.node?.removeFromParent()
-                print("Score Bump")
                 bumpScore()
             } else if (contact.bodyB.node?.name == "Invincibility") {
                 contact.bodyB.node?.removeFromParent()
-                print("Invincibility")
                 makeInvincible()
                 showInvincibleLabel()
             } else if (contact.bodyB.node?.name == "Rock") {
-                print("ROCK CONTACT WITH SHIP")
                 if Helper.isInvincible() == false {
                     SpaceShip.deductHealth(Helper.deductHealth())
                     if SpaceShip.dead() {
@@ -165,28 +163,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func randomSpawn() {
-        if Helper.randomSpawn() == 1 {
+        if Helper.canRun() {
+            if Helper.randomSpawn() == 1 {
                 let boost = Boost.spawnInvincibility()
                 boost.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: self.frame.maxY)
                 self.addChild(boost)
-        } else {
-            let boost = Boost.spawnScoreBump()
-            boost.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: self.frame.maxY)
-            self.addChild(boost)
+            } else {
+                let boost = Boost.spawnScoreBump()
+                boost.position = Helper.randomSpawnPoint(frame.minX, valueHighX: frame.maxX, valueY: self.frame.maxY)
+                self.addChild(boost)
+            }
         }
-        
     }
     
     func boosterTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("randomSpawn"), userInfo: nil, repeats: true)
+        boosterRateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("randomSpawn"), userInfo: nil, repeats: true)
     }
     
     func rockTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval(Helper.rockSpawnRate(), target: self, selector: ("spawnRock"), userInfo: nil, repeats: true)
+        rockRateTimer = NSTimer.scheduledTimerWithTimeInterval(Helper.rockSpawnRate(), target: self, selector: ("spawnRock"), userInfo: nil, repeats: true)
     }
     
     func healthTimer() {
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.3, target: self, selector: ("spawnHealth"), userInfo: nil, repeats: true)
+        healthRateTimer = NSTimer.scheduledTimerWithTimeInterval(5.3, target: self, selector: ("spawnHealth"), userInfo: nil, repeats: true)
     }
     
     func stopRocks() {
@@ -258,11 +257,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func refreshHealthView() {
         label.removeFromParent()
         showHealth()
+        print("GAMESCENE: refreshHealthView")
     }
     
     private func refreshScoreView() {
         scoreLabel.removeFromParent()
         showScore()
+        print("GAMESCENE: refreshScoreView")
     }
     
     private func endGame() {
@@ -273,6 +274,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let skView = self.view as SKView!;
         let gameScene = EndScene(size: (skView?.bounds.size)!)
         let transition = SKTransition.fadeWithDuration (2.0)
+        boosterRateTimer.invalidate()
+        rockRateTimer.invalidate()
+        healthRateTimer.invalidate()
         view!.presentScene(gameScene, transition: transition)
     }
     
@@ -281,6 +285,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             Helper.toggleInvincibility(true)
             invincibilityTimer = 1
             startInvincibilityTimer()
+            print("GAMESCENE: makeInvincible")
         }
     }
     
@@ -290,6 +295,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if invincibilityTimer >= 15 {
             invincibilityNSTimer.invalidate()
             Helper.toggleInvincibility(false)
+            print("GAMESCENE: incrementInvincibilityTimer")
         }
     }
     
@@ -299,6 +305,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func startInvincibilityTimer() {
         invincibilityNSTimer  = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: (#selector(GameScene.incrementInvincibilityTimer)), userInfo: nil, repeats: true)
+        print("GAMESCENE: startInvincibilityTimer")
     }
 
 }

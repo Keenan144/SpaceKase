@@ -20,6 +20,8 @@ class Boost: SKSpriteNode {
             let boostSize = CGSize(width: 20, height: 20)
             let boost = SKSpriteNode(color: boostColor, size: boostSize)
             
+            boost.texture = SKTexture(imageNamed: "Shield")
+            
             boost.physicsBody = SKPhysicsBody(rectangleOfSize: boostSize)
             boost.physicsBody?.dynamic = true
             boost.physicsBody?.usesPreciseCollisionDetection = true
@@ -29,9 +31,10 @@ class Boost: SKSpriteNode {
             boost.name = "Invincibility"
 
             canSpawn = false
-            spawnerTimeout()
+             print("BOOST: spawnInvincibility")
             return boost
         }
+        print("BOOST: spawnScoreBump()")
         return Boost.spawnScoreBump()
     }
     
@@ -39,6 +42,8 @@ class Boost: SKSpriteNode {
         let boostColor = UIColor.cyanColor()
         let boostSize = CGSize(width: 20, height: 20)
         let boost = SKSpriteNode(color: boostColor, size: boostSize)
+        
+        boost.texture = SKTexture(imageNamed: "Point")
         
         boost.physicsBody = SKPhysicsBody(rectangleOfSize: boostSize)
         boost.physicsBody?.dynamic = true
@@ -48,24 +53,7 @@ class Boost: SKSpriteNode {
         
         boost.name = "ScoreBump"
         
+        print("BOOST: spawnScoreBump")
         return boost
-    }
-    
-    class func spawnerTimer() {
-        if Helper.canRun() {
-            print("invincibiliy timer: \(invincibilityTimer)")
-            invincibilityTimer = invincibilityTimer + 1
-            if invincibilityTimer >= 30 {
-                invincibilityTimer = 1
-                timer.invalidate()
-                canSpawn = true
-            }
-        }
-    }
-    
-    class func spawnerTimeout() {
-        if Helper.canRun() {
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("spawnerTimer"), userInfo: nil, repeats: true)
-        }
     }
 }

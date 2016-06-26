@@ -10,6 +10,8 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    @IBOutlet weak var instruction: SKLabelNode?
+    
     var startButton:SKLabelNode!
     var settingsButton:SKLabelNode!
     var touchLocation:CGPoint!
@@ -54,8 +56,11 @@ class MenuScene: SKScene {
             defaults.setObject(100, forKey: "Health")
             defaults.setObject(5, forKey: "Damage")
             defaults.setObject(1, forKey: "SpawnRate")
-            defaults.setObject(false, forKey: "Invinsible")
             defaults.setObject(false, forKey: "Run")
+        }
+        
+        if defaults.objectForKey("Invincible") == nil {
+            Helper.toggleInvincibility(false)
         }
     }
     

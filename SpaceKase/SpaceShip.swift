@@ -19,18 +19,15 @@ class SpaceShip: SKScene {
         ship.texture = SKTexture(imageNamed: "Spaceship")
         
         ship.physicsBody = SKPhysicsBody(texture: ship.texture!, alphaThreshold: 0, size: shipSize)
-
         ship.physicsBody?.dynamic = false
         ship.physicsBody?.collisionBitMask = 1;
         ship.physicsBody?.usesPreciseCollisionDetection = true
-        
         ship.physicsBody?.categoryBitMask = shipCategory
         ship.physicsBody?.contactTestBitMask = rockCategory
-        
         ship.position = CGPoint(x: frame.midX, y: frame.midY - 150)
-        
         ship.name = "Ship"
  
+        print("SPACESHIP: spawn")
         return ship
     }
     
@@ -40,21 +37,26 @@ class SpaceShip: SKScene {
     }
     
     class func shipHealth() -> Int {
+        print("SPACESHIP: shiphealth")
         return health
     }
     
     class func dead() -> Bool {
+        print("SPACESHIP: dead")
         return checkHealth(health)
     }
     
     static func checkHealth(health: Int) -> Bool {
         if health > 1 {
+            print("SPACESHIP: checkHealth [FALSE]")
             return false
         }
+        print("SPACESHIP: checkHealth [TRUE]")
         return true
     }
     
     static func setShipHealth(newHealth: Int) {
+        print("SPACESHIP: setShipHealth")
         health = newHealth
     }
 }
