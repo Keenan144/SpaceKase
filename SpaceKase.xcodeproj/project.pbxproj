@@ -16,11 +16,20 @@
 		E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */; };
 		E8454F1C1CFB4E11006AAB8E /* SpaceKaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F1B1CFB4E11006AAB8E /* SpaceKaseTests.swift */; };
 		E8454F271CFB4E11006AAB8E /* SpaceKaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */; };
-		E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8454F341CFB9D3F006AAB8E /* RockController.swift */; };
 		E85690FA1D02962000B1D1EA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85690F91D02962000B1D1EA /* MenuScene.swift */; };
 		E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85690FB1D02978800B1D1EA /* MenuScene.sks */; };
 		E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691001D02A82300B1D1EA /* SpaceShip.swift */; };
 		E85691031D02A82F00B1D1EA /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85691021D02A82F00B1D1EA /* Rock.swift */; };
+		E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F901D04DE2700A22F08 /* boundary.swift */; };
+		E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85D2F921D051AFD00A22F08 /* SettingScene.sks */; };
+		E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F941D051B0F00A22F08 /* SettingScene.swift */; };
+		E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FDEA41D1CD42700BB923B /* Helper.swift */; };
+		E87FDEA91D1DCF3B00BB923B /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FDEA81D1DCF3B00BB923B /* Upload.swift */; };
+		E89121591D191D54009F4257 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89121581D191D54009F4257 /* File.swift */; };
+		E8C281631D19EDFD007C2A50 /* EndScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C281621D19EDFD007C2A50 /* EndScene.sks */; };
+		E8C281651D19EE0B007C2A50 /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C281641D19EE0B007C2A50 /* EndScene.swift */; };
+		E8C281681D1AC855007C2A50 /* PowerUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C281671D1AC855007C2A50 /* PowerUpController.swift */; };
+		E8C2816A1D1AC8F1007C2A50 /* Booster.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C281691D1AC8F1007C2A50 /* Booster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +65,20 @@
 		E8454F221CFB4E11006AAB8E /* SpaceKaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceKaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8454F261CFB4E11006AAB8E /* SpaceKaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceKaseUITests.swift; sourceTree = "<group>"; };
 		E8454F281CFB4E11006AAB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8454F341CFB9D3F006AAB8E /* RockController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockController.swift; sourceTree = "<group>"; };
 		E85690F91D02962000B1D1EA /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		E85690FB1D02978800B1D1EA /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		E85691001D02A82300B1D1EA /* SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
 		E85691021D02A82F00B1D1EA /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
+		E85D2F901D04DE2700A22F08 /* boundary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = boundary.swift; sourceTree = "<group>"; };
+		E85D2F921D051AFD00A22F08 /* SettingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingScene.sks; sourceTree = "<group>"; };
+		E85D2F941D051B0F00A22F08 /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
+		E87FDEA41D1CD42700BB923B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E87FDEA81D1DCF3B00BB923B /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		E89121581D191D54009F4257 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E8C281621D19EDFD007C2A50 /* EndScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndScene.sks; sourceTree = "<group>"; };
+		E8C281641D19EE0B007C2A50 /* EndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
+		E8C281671D1AC855007C2A50 /* PowerUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerUpController.swift; sourceTree = "<group>"; };
+		E8C281691D1AC8F1007C2A50 /* Booster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +129,11 @@
 		E8454F011CFB4E11006AAB8E /* SpaceKase */ = {
 			isa = PBXGroup;
 			children = (
+				E864971D1D2F430E00A41B03 /* InGameLabels */,
+				E87FDEA31D1CD41000BB923B /* Helpers */,
+				E8C281661D1AC83C007C2A50 /* PowerUps */,
+				E89121571D191D40009F4257 /* Health */,
+				E85D2F8F1D04DDBE00A22F08 /* boundaries */,
 				E85690FF1D02A80100B1D1EA /* Ships */,
 				E85690FE1D02A7DC00B1D1EA /* Rocks */,
 				E8454F021CFB4E11006AAB8E /* AppDelegate.swift */,
@@ -121,9 +144,12 @@
 				E8454F0A1CFB4E11006AAB8E /* Main.storyboard */,
 				E8454F0F1CFB4E11006AAB8E /* LaunchScreen.storyboard */,
 				E8454F121CFB4E11006AAB8E /* Info.plist */,
-				E8454F341CFB9D3F006AAB8E /* RockController.swift */,
 				E85690F91D02962000B1D1EA /* MenuScene.swift */,
 				E85690FB1D02978800B1D1EA /* MenuScene.sks */,
+				E85D2F941D051B0F00A22F08 /* SettingScene.swift */,
+				E85D2F921D051AFD00A22F08 /* SettingScene.sks */,
+				E8C281621D19EDFD007C2A50 /* EndScene.sks */,
+				E8C281641D19EE0B007C2A50 /* EndScene.swift */,
 			);
 			path = SpaceKase;
 			sourceTree = "<group>";
@@ -160,6 +186,47 @@
 				E85691001D02A82300B1D1EA /* SpaceShip.swift */,
 			);
 			name = Ships;
+			sourceTree = "<group>";
+		};
+		E85D2F8F1D04DDBE00A22F08 /* boundaries */ = {
+			isa = PBXGroup;
+			children = (
+				E85D2F901D04DE2700A22F08 /* boundary.swift */,
+			);
+			name = boundaries;
+			sourceTree = "<group>";
+		};
+		E864971D1D2F430E00A41B03 /* InGameLabels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InGameLabels;
+			sourceTree = "<group>";
+		};
+		E87FDEA31D1CD41000BB923B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E87FDEA41D1CD42700BB923B /* Helper.swift */,
+				E87FDEA81D1DCF3B00BB923B /* Upload.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E89121571D191D40009F4257 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				E89121581D191D54009F4257 /* File.swift */,
+			);
+			name = Health;
+			sourceTree = "<group>";
+		};
+		E8C281661D1AC83C007C2A50 /* PowerUps */ = {
+			isa = PBXGroup;
+			children = (
+				E8C281671D1AC855007C2A50 /* PowerUpController.swift */,
+				E8C281691D1AC8F1007C2A50 /* Booster.swift */,
+			);
+			name = PowerUps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,15 +298,18 @@
 					E8454EFE1CFB4E11006AAB8E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 6WZHU62G8E;
+						LastSwiftMigration = 0800;
 					};
 					E8454F161CFB4E11006AAB8E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 6WZHU62G8E;
+						LastSwiftMigration = 0800;
 						TestTargetID = E8454EFE1CFB4E11006AAB8E;
 					};
 					E8454F211CFB4E11006AAB8E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 6WZHU62G8E;
+						LastSwiftMigration = 0800;
 						TestTargetID = E8454EFE1CFB4E11006AAB8E;
 					};
 				};
@@ -272,6 +342,8 @@
 				E8454F051CFB4E11006AAB8E /* GameScene.sks in Resources */,
 				E8454F111CFB4E11006AAB8E /* LaunchScreen.storyboard in Resources */,
 				E8454F0E1CFB4E11006AAB8E /* Assets.xcassets in Resources */,
+				E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */,
+				E8C281631D19EDFD007C2A50 /* EndScene.sks in Resources */,
 				E85690FC1D02978800B1D1EA /* MenuScene.sks in Resources */,
 				E8454F0C1CFB4E11006AAB8E /* Main.storyboard in Resources */,
 			);
@@ -298,13 +370,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87FDEA91D1DCF3B00BB923B /* Upload.swift in Sources */,
 				E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */,
+				E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */,
 				E85691031D02A82F00B1D1EA /* Rock.swift in Sources */,
 				E8454F071CFB4E11006AAB8E /* GameScene.swift in Sources */,
 				E8454F091CFB4E11006AAB8E /* GameViewController.swift in Sources */,
+				E8C281681D1AC855007C2A50 /* PowerUpController.swift in Sources */,
+				E8C2816A1D1AC8F1007C2A50 /* Booster.swift in Sources */,
 				E85690FA1D02962000B1D1EA /* MenuScene.swift in Sources */,
-				E8454F351CFB9D3F006AAB8E /* RockController.swift in Sources */,
+				E89121591D191D54009F4257 /* File.swift in Sources */,
+				E8C281651D19EE0B007C2A50 /* EndScene.swift in Sources */,
+				E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */,
 				E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */,
+				E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +455,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -398,7 +478,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.3;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -420,6 +500,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -435,7 +516,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -444,10 +525,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpaceKase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BETA01.keenansturtevant.SpaceKase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -455,10 +540,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpaceKase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BETA01.keenansturtevant.SpaceKase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -471,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceKase.app/SpaceKase";
 			};
 			name = Debug;
@@ -483,6 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceKase.app/SpaceKase";
 			};
 			name = Release;
@@ -495,6 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SpaceKase;
 				USES_XCTRUNNER = YES;
 			};
@@ -507,6 +599,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herokuapp.keenansturtevant.SpaceKaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SpaceKase;
 				USES_XCTRUNNER = YES;
 			};
