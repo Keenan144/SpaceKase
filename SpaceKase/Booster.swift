@@ -9,8 +9,6 @@
 import SpriteKit
 
 class Boost: SKSpriteNode {
-    static var invincibilityTimer:Int! = 1
-    static var showInvincibleLabel:SKLabelNode!
     static var canSpawn:Bool!
     static var timer:NSTimer!
     

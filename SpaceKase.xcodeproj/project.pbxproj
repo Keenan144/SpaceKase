@@ -129,6 +129,7 @@
 		E8454F011CFB4E11006AAB8E /* SpaceKase */ = {
 			isa = PBXGroup;
 			children = (
+				E864971D1D2F430E00A41B03 /* InGameLabels */,
 				E87FDEA31D1CD41000BB923B /* Helpers */,
 				E8C281661D1AC83C007C2A50 /* PowerUps */,
 				E89121571D191D40009F4257 /* Health */,
@@ -193,6 +194,13 @@
 				E85D2F901D04DE2700A22F08 /* boundary.swift */,
 			);
 			name = boundaries;
+			sourceTree = "<group>";
+		};
+		E864971D1D2F430E00A41B03 /* InGameLabels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InGameLabels;
 			sourceTree = "<group>";
 		};
 		E87FDEA31D1CD41000BB923B /* Helpers */ = {
@@ -289,7 +297,7 @@
 				TargetAttributes = {
 					E8454EFE1CFB4E11006AAB8E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8X8LQ28Y8R;
+						DevelopmentTeam = 6WZHU62G8E;
 						LastSwiftMigration = 0800;
 					};
 					E8454F161CFB4E11006AAB8E = {
@@ -521,7 +529,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpaceKase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BETA.keenansturtevant.SpaceKase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BETA01.keenansturtevant.SpaceKase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -536,7 +544,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpaceKase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BETA.keenansturtevant.SpaceKase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BETA01.keenansturtevant.SpaceKase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
