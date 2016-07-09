@@ -17,37 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SpaceKase ALPHA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y49-jC-0g7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SpaceKase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y49-jC-0g7">
                                 <rect key="frame" x="228" y="143" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="289" width="144" height="21"/>
+                                    <rect key="frame" x="134" y="289" width="133" height="21"/>
                                 </variation>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="tpb-xk-T06">
                                 <rect key="frame" x="0.0" y="-24" width="24" height="24"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="154" width="24" height="24"/>
+                                    <rect key="frame" x="83" y="92" width="24" height="24"/>
                                 </variation>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-dl-lMN">
                                 <rect key="frame" x="0.0" y="-24" width="24" height="24"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="225" y="189" width="24" height="24"/>
-                                </variation>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-WT-6va">
-                                <rect key="frame" x="0.0" y="-24" width="24" height="24"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="248" y="416" width="24" height="24"/>
+                                    <rect key="frame" x="277" y="234" width="24" height="24"/>
                                 </variation>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="cM5-Kz-otM">
                                 <rect key="frame" x="0.0" y="-24" width="24" height="24"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="123" y="372" width="24" height="24"/>
+                                    <rect key="frame" x="145" y="371" width="24" height="24"/>
+                                </variation>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-WT-6va">
+                                <rect key="frame" x="0.0" y="-24" width="24" height="24"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="205" y="490" width="24" height="24"/>
                                 </variation>
                             </imageView>
                         </subviews>
@@ -56,16 +56,16 @@
                             <mask key="subviews">
                                 <exclude reference="tpb-xk-T06"/>
                                 <exclude reference="HFe-dl-lMN"/>
-                                <exclude reference="CNS-WT-6va"/>
                                 <exclude reference="cM5-Kz-otM"/>
+                                <exclude reference="CNS-WT-6va"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="tpb-xk-T06"/>
                                 <include reference="HFe-dl-lMN"/>
-                                <include reference="CNS-WT-6va"/>
                                 <include reference="cM5-Kz-otM"/>
+                                <include reference="CNS-WT-6va"/>
                             </mask>
                         </variation>
                     </view>

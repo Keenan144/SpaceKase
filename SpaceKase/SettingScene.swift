@@ -38,20 +38,20 @@ class SettingScene: SKScene {
             } else if (node == easyButton) {
                 defaults.setObject("Easy", forKey: "Difficulity")
                 defaults.setObject(200, forKey: "Health")
-                defaults.setObject(1, forKey: "Damage")
+                defaults.setObject(5, forKey: "Damage")
                 defaults.setObject(1, forKey: "SpawnRate")
                 addLevelButtons()
             } else if  (node == normalButton) {
                 defaults.setObject("Normal", forKey: "Difficulity")
                 defaults.setObject(150, forKey: "Health")
-                defaults.setObject(1, forKey: "Damage")
-                defaults.setObject(0.5, forKey: "SpawnRate")
+                defaults.setObject(10, forKey: "Damage")
+                defaults.setObject(0.7, forKey: "SpawnRate")
                 addLevelButtons()
             } else if (node == hardButton) {
                 defaults.setObject("Hard", forKey: "Difficulity")
                 defaults.setObject(100, forKey: "Health")
-                defaults.setObject(1, forKey: "Damage")
-                defaults.setObject(0.2, forKey: "SpawnRate")
+                defaults.setObject(10, forKey: "Damage")
+                defaults.setObject(0.5, forKey: "SpawnRate")
                 addLevelButtons()
             } else if (node == resetButton) {
                 defaults.setObject("Normal", forKey: "Difficulity")

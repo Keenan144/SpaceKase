@@ -23,6 +23,8 @@
 		E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F901D04DE2700A22F08 /* boundary.swift */; };
 		E85D2F931D051AFD00A22F08 /* SettingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85D2F921D051AFD00A22F08 /* SettingScene.sks */; };
 		E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D2F941D051B0F00A22F08 /* SettingScene.swift */; };
+		E86497211D31B17900A41B03 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86497201D31B17900A41B03 /* Physics.swift */; };
+		E86497241D31B6D700A41B03 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86497231D31B6D700A41B03 /* GameController.swift */; };
 		E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FDEA41D1CD42700BB923B /* Helper.swift */; };
 		E87FDEA91D1DCF3B00BB923B /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FDEA81D1DCF3B00BB923B /* Upload.swift */; };
 		E89121591D191D54009F4257 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89121581D191D54009F4257 /* File.swift */; };
@@ -72,6 +74,8 @@
 		E85D2F901D04DE2700A22F08 /* boundary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = boundary.swift; sourceTree = "<group>"; };
 		E85D2F921D051AFD00A22F08 /* SettingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingScene.sks; sourceTree = "<group>"; };
 		E85D2F941D051B0F00A22F08 /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
+		E86497201D31B17900A41B03 /* Physics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
+		E86497231D31B6D700A41B03 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		E87FDEA41D1CD42700BB923B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E87FDEA81D1DCF3B00BB923B /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		E89121581D191D54009F4257 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -129,7 +133,7 @@
 		E8454F011CFB4E11006AAB8E /* SpaceKase */ = {
 			isa = PBXGroup;
 			children = (
-				E864971D1D2F430E00A41B03 /* InGameLabels */,
+				E86497221D31B69600A41B03 /* GameController */,
 				E87FDEA31D1CD41000BB923B /* Helpers */,
 				E8C281661D1AC83C007C2A50 /* PowerUps */,
 				E89121571D191D40009F4257 /* Health */,
@@ -148,8 +152,8 @@
 				E85690FB1D02978800B1D1EA /* MenuScene.sks */,
 				E85D2F941D051B0F00A22F08 /* SettingScene.swift */,
 				E85D2F921D051AFD00A22F08 /* SettingScene.sks */,
-				E8C281621D19EDFD007C2A50 /* EndScene.sks */,
 				E8C281641D19EE0B007C2A50 /* EndScene.swift */,
+				E8C281621D19EDFD007C2A50 /* EndScene.sks */,
 			);
 			path = SpaceKase;
 			sourceTree = "<group>";
@@ -196,11 +200,12 @@
 			name = boundaries;
 			sourceTree = "<group>";
 		};
-		E864971D1D2F430E00A41B03 /* InGameLabels */ = {
+		E86497221D31B69600A41B03 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				E86497231D31B6D700A41B03 /* GameController.swift */,
 			);
-			name = InGameLabels;
+			name = GameController;
 			sourceTree = "<group>";
 		};
 		E87FDEA31D1CD41000BB923B /* Helpers */ = {
@@ -208,6 +213,7 @@
 			children = (
 				E87FDEA41D1CD42700BB923B /* Helper.swift */,
 				E87FDEA81D1DCF3B00BB923B /* Upload.swift */,
+				E86497201D31B17900A41B03 /* Physics.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			files = (
 				E87FDEA91D1DCF3B00BB923B /* Upload.swift in Sources */,
 				E85691011D02A82300B1D1EA /* SpaceShip.swift in Sources */,
+				E86497211D31B17900A41B03 /* Physics.swift in Sources */,
 				E87FDEA51D1CD42700BB923B /* Helper.swift in Sources */,
 				E85691031D02A82F00B1D1EA /* Rock.swift in Sources */,
 				E8454F071CFB4E11006AAB8E /* GameScene.swift in Sources */,
@@ -382,6 +389,7 @@
 				E89121591D191D54009F4257 /* File.swift in Sources */,
 				E8C281651D19EE0B007C2A50 /* EndScene.swift in Sources */,
 				E85D2F911D04DE2700A22F08 /* boundary.swift in Sources */,
+				E86497241D31B6D700A41B03 /* GameController.swift in Sources */,
 				E8454F031CFB4E11006AAB8E /* AppDelegate.swift in Sources */,
 				E85D2F951D051B0F00A22F08 /* SettingScene.swift in Sources */,
 			);

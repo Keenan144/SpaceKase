@@ -117,6 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 showInvincibleLabel()
             } else if (contact.bodyB.node?.name == "Rock") {
                 if Helper.isInvincible() == false {
+                    contact.bodyB.node?.removeFromParent()
                     SpaceShip.deductHealth(Helper.deductHealth())
                     if SpaceShip.dead() {
                         stopRocks()
@@ -143,6 +144,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func increaseScore() {
         if Helper.canRun() {
             score = score + 5
+            if score == 250 || score == 500 || score == 1000 || score == 1500 {
+                Helper.setRockSpawnRate(score)
+                rockRateTimer.invalidate()
+                rockTimer()
+            }
         }
     }
     
@@ -277,6 +283,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         boosterRateTimer.invalidate()
         rockRateTimer.invalidate()
         healthRateTimer.invalidate()
+        Helper.setRockSpawnRate(0)
         view!.presentScene(gameScene, transition: transition)
     }
     

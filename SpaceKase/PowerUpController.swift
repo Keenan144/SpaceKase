@@ -9,18 +9,19 @@
 import SpriteKit
 
 class PowerUp: SKSpriteNode {
-    class func randomInRange(lo: CGFloat, hi : CGFloat) -> CGFloat {
-         print("POWERUPCONTROLLER: randomInRange")
+    class func randomInRange(lo: CGFloat, hi: CGFloat) -> CGFloat {
         return lo + CGFloat(arc4random_uniform(UInt32(hi - lo + 1)))
     }
     
     class func spawnHealth() -> SKSpriteNode {
-        print("POWERUPCONTROLLER: spawnHealth")
         return Health.spawn()
     }
     
     class func spawnInvincibility() -> SKSpriteNode {
-        print("POWERUPCONTROLLER: spawnInvincibility")
         return Boost.spawnInvincibility()
+    }
+    
+    class func spawnScoreBump() -> SKSpriteNode {
+        return Boost.spawnScoreBump()
     }
 }

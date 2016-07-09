@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Helper: SKScene {
+class Helper: SKNode {
     static var invincible = Bool()
     static var defaults = NSUserDefaults.standardUserDefaults()
     static var invincibilityTimer = Int32()
@@ -24,52 +24,59 @@ class Helper: SKScene {
     }
     
     class func randomInRange(lo: CGFloat, hi : CGFloat) -> CGFloat {
-         print("HELPER: RrandomInRange")
         return lo + CGFloat(arc4random_uniform(UInt32(hi - lo + 1)))
     }
     
     class func randomSpawnPoint(valueLowX: CGFloat, valueHighX: CGFloat, valueY: CGFloat) -> CGPoint {
-         print("HELPER: randomSpawnPoint")
         return CGPoint(x: randomInRange(valueLowX, hi: valueHighX), y: valueY + 100)
     }
     
     class func toggleInvincibility(value: Bool) {
-        print("HELPER: toggleInvincibility")
         defaults.setObject(value, forKey: "Invincible")
     }
     
     class func toggleRun(value: Bool) {
-         print("HELPER: toggleRun")
         defaults.setObject(value, forKey: "Run")
     }
     
     class func setLastScore(score: Int) {
-         print("HELPER: setLastScore")
         defaults.setObject(score, forKey: "LastScore")
     }
     
     class func canRun() -> Bool {
-         print("HELPER: canRun")
         return defaults.objectForKey("Run") as! Bool
     }
     
     class func setShipHealth() -> Int {
-         print("HELPER: setShipHealth")
         return defaults.objectForKey("Health") as! Int
     }
     
     class func isInvincible() -> Bool {
-         print("HELPER: isInvincible")
         return defaults.objectForKey("Invincible") as! Bool
     }
     
     class func deductHealth() -> Int {
-         print("HELPER: deductHealth")
         return defaults.objectForKey("Damage") as! Int
     }
     
     class func rockSpawnRate() -> NSTimeInterval {
-         print("HELPER: rockSpawnRate")
         return defaults.objectForKey("SpawnRate") as! NSTimeInterval
+    }
+    
+    class func setRockSpawnRate(score: NSInteger) {
+        var spawnRate = NSTimeInterval()
+        switch (score) {
+            case _ where (score == 1500):
+            spawnRate = 0.2
+            case _ where (score == 1000):
+            spawnRate = 0.3
+            case _ where (score == 500):
+            spawnRate = 0.4
+            case _ where (score == 250):
+            spawnRate = 0.5
+            default:
+            spawnRate = 1.0
+        }
+        defaults.setObject(spawnRate, forKey: "SpawnRate")
     }
 }

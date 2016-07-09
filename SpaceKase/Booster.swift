@@ -16,20 +16,11 @@ class Boost: SKSpriteNode {
         if canSpawn == nil || canSpawn == true {
             let boostColor = UIColor.yellowColor()
             let boostSize = CGSize(width: 20, height: 20)
-            let boost = SKSpriteNode(color: boostColor, size: boostSize)
-            
+            let boost = PhysicsHelper.setNodePhysics(boostSize, boostColor: boostColor, name: "Invincibility", velocity: -250)
             boost.texture = SKTexture(imageNamed: "Shield")
             
-            boost.physicsBody = SKPhysicsBody(rectangleOfSize: boostSize)
-            boost.physicsBody?.dynamic = true
-            boost.physicsBody?.usesPreciseCollisionDetection = true
-            boost.physicsBody?.affectedByGravity = false
-            boost.physicsBody?.velocity.dy = -250
-            
-            boost.name = "Invincibility"
-
             canSpawn = false
-             print("BOOST: spawnInvincibility")
+            print("BOOST: spawnInvincibility")
             return boost
         }
         print("BOOST: spawnScoreBump()")
@@ -39,19 +30,7 @@ class Boost: SKSpriteNode {
     class func spawnScoreBump() -> SKSpriteNode {
         let boostColor = UIColor.cyanColor()
         let boostSize = CGSize(width: 20, height: 20)
-        let boost = SKSpriteNode(color: boostColor, size: boostSize)
-        
-        boost.texture = SKTexture(imageNamed: "Point")
-        
-        boost.physicsBody = SKPhysicsBody(rectangleOfSize: boostSize)
-        boost.physicsBody?.dynamic = true
-        boost.physicsBody?.usesPreciseCollisionDetection = true
-        boost.physicsBody?.affectedByGravity = false
-        boost.physicsBody?.velocity.dy = -250
-        
-        boost.name = "ScoreBump"
-        
-        print("BOOST: spawnScoreBump")
+        let boost = PhysicsHelper.setNodePhysics(boostSize, boostColor: boostColor, name: "ScoreBump", velocity: -250)
         return boost
     }
 }

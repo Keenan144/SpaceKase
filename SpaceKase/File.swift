@@ -6,27 +6,19 @@
 //  Copyright © 2016 Keenan Sturtevant. All rights reserved.
 //
 
-import Foundation
+
 import SpriteKit
 
 class Health: SKSpriteNode {
     class func spawn() -> SKSpriteNode {
-        let healthColor = UIColor.greenColor()
-        let healthSize = CGSize(width: 20, height: 20)
-        let health = SKSpriteNode(color: healthColor, size: healthSize)
+        let boostColor = UIColor.greenColor()
+        let boostSize = CGSize(width: 20, height: 20)
         
-        health.texture = SKTexture(imageNamed: "Health")
-        
-        health.physicsBody = SKPhysicsBody(rectangleOfSize: healthSize)
-        health.physicsBody?.dynamic = true
-        health.physicsBody?.usesPreciseCollisionDetection = true
-        health.physicsBody?.affectedByGravity = false
-        health.physicsBody?.velocity.dy = -300
-        
-        health.name = "Health"
+        let boost = PhysicsHelper.setNodePhysics(boostSize, boostColor: boostColor, name: "Health", velocity: -250)
+        boost.texture = SKTexture(imageNamed: "Health")
         
         print("HEALTH: spawn")
-        return health
+        return boost
     }
     
     class func showHealth(label: SKLabelNode) -> SKLabelNode {

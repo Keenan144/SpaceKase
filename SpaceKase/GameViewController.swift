@@ -11,20 +11,6 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet var GameTitle: UILabel!
-    @IBOutlet var StartGame: UIButton!
-    @IBOutlet var Settings: UIButton!
-    
-    
-    func renderButtons() {
-//        GameTitle.text = "SpaceKase"
-//        StartGame.setTitle("Start Game", forState: UIControlState.Normal)
-//        StartGame.addTarget(self, action: (#selector(GameViewController.LaunchGame)), forControlEvents: .TouchUpInside)
-//        Settings.setTitle("Settings", forState: UIControlState.Normal)
-//        Settings.addTarget(self, action: (#selector(GameViewController.LaunchSettings)), forControlEvents: .TouchUpInside)
-    }
-    
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews();
         let skView = self.view as! SKView;
@@ -46,8 +32,6 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        renderButtons()
 
         if let scene = MenuScene(fileNamed: "MenuScene") {
             // Configure the view.
@@ -91,7 +75,6 @@ class GameViewController: UIViewController {
         
         // Present Scene
         let transition = SKTransition.fadeWithDuration (2.0)
-        removeButtons()
         skView.presentScene(scene, transition: transition)
     }
     
@@ -104,13 +87,7 @@ class GameViewController: UIViewController {
         
         // Present Scene
         let transition = SKTransition.fadeWithDuration (2.0)
-        removeButtons()
         skView.presentScene(scene, transition: transition)
     }
     
-    func removeButtons() {
-        GameTitle.hidden = true
-        StartGame.hidden = true
-        Settings.hidden = true
-    }
 }

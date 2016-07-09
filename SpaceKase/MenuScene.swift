@@ -10,8 +10,6 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
-    @IBOutlet weak var instruction: SKLabelNode?
-    
     var startButton:SKLabelNode!
     var settingsButton:SKLabelNode!
     var touchLocation:CGPoint!

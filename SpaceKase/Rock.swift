@@ -12,18 +12,15 @@ import SpriteKit
 class Rock: SKSpriteNode {
     
     class func spawn() -> SKSpriteNode {
-        let rockColor = UIColor.blueColor()
-        let rockSize = CGSize(width: 30, height: 40)
-        let rock = SKSpriteNode(color: rockColor, size: rockSize)
+        let boostColor = UIColor.blueColor()
+        let boostSize = CGSize(width: 30, height: 40)
         
-        rock.texture = SKTexture(imageNamed: "Rock")
-        rock.physicsBody = SKPhysicsBody(texture: rock.texture!, alphaThreshold: 0, size: rockSize)
-        rock.physicsBody?.dynamic = true
-        rock.physicsBody?.usesPreciseCollisionDetection = true
-        rock.physicsBody?.affectedByGravity = true
-        rock.name = "Rock"
+        let boost = PhysicsHelper.setNodePhysics(boostSize, boostColor: boostColor, name: "Rock", velocity: -550)
         
-        print("ROCK: spawn")
-        return rock
+        boost.texture = SKTexture(imageNamed: "Rock")
+        boost.physicsBody = SKPhysicsBody(texture: boost.texture!, alphaThreshold: 0, size: boostSize)
+        boost.physicsBody?.allowsRotation = false
+        
+        return boost
     }
 }
